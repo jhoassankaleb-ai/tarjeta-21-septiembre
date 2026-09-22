@@ -3,144 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Etapa Escolar y Proyecto Futuro</title>
+    <title>Tarjeta Virtual - 21 de Septiembre</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f4f7f6;
-            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
         }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h1 {
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
         }
-
-        h2 {
-            color: #2980b9;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.6em;
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
+        h1 { color: #2e7d32; margin-bottom: 15px; font-size: 1.8rem; }
+        p { color: #333; line-height: 1.6; margin-bottom: 28px; text-align: justify; }
+        .btn {
+            background: #1b365d; color: white; border: none;
+            padding: 12px 24px; border-radius: 25px; font-size: 1rem;
+            cursor: pointer; transition: 0.3s;
         }
-
-        p {
-            text-align: justify;
-            margin-bottom: 15px;
-            font-size: 1.05em;
-            color: #4a4a4a;
-        }
-
-        /* Estilos de la Galería de Fotos */
-        .galeria {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .galeria-item {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            background-color: #eee;
-        }
-
-        .galeria-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .galeria-item img:hover {
-            transform: scale(1.05);
-        }
-
-        .pie-foto {
-            padding: 8px;
-            font-size: 0.85em;
-            text-align: center;
-            color: #666;
-            background-color: #fafafa;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            .galeria {
-                grid-template-columns: 1fr;
-            }
-        }
+        .btn:hover { background: #2e7d32; transform: scale(1.05); }
+        .page { display: none; }
+        .page.active { display: block; }
     </style>
 </head>
-<body>
+<body id="bg-container" style="background-image: url('1.jpg');">
 
-    <div class="container">
-        <h1>Mi Trayectoria y Aspiraciones</h1>
+    <div class="card">
+        <!-- PORTADA 1 -->
+        <div id="page1" class="page active">
+            <h1>¡Feliz 21 de Septiembre! 🌸</h1>
+            <p style="text-align: center;">Día del Estudiante y de la Primavera. ¡Celebramos el esfuerzo, el entusiasmo y el futuro de nuestra juventud!</p>
+            <button class="btn" onclick="showPage(2)">Ver Mi Testimonio</button>
+        </div>
 
-        <!-- SECCIÓN 1: MI ETAPA ESCOLAR -->
-        <section>
-            <h2>1. Mi Etapa Escolar</h2>
-            <p>
-                Mi paso por la etapa escolar ha sido una experiencia llena de aprendizajes, transformaciones y desafíos personales que moldearon mi carácter. En mis primeros años de educación primaria todo marchaba con relativa tranquilidad y normalidad; sin embargo, con el paso del tiempo tuve que enfrentar un cambio de colegio que al principio me afectó bastante. No me sentía conforme con haber dejado mi entorno anterior y me resultaba difícil adaptarme a ese nuevo ambiente. Además, al tratarse de una institución privada, admito que no demostraba el compromiso necesario ni me esforzaba al máximo en mis deberes académicos, ya que sentía una falta de motivación y asumía falsamente que todo resultaría sencillo con solo asistir.
-            </p>
-            <p>
-                Afortunadamente, mi rumbo cambió de manera significativa cuando ingresé al colegio Don Bosco. En los primeros días experimenté una gran timidez e inseguridad al verme rodeado de personas desconocidas y un ritmo de aprendizaje distinto. No obstante, a medida que transcurrieron las semanas, fui superando paulatinamente el aislamiento, comenzando a participar más e interactuando con fluidez con mis compañeros de aula. Esta progresiva ganancia de confianza impactó de forma sumamente positiva en todos los aspectos de mi vida escolar. No solo logré subir exponencialmente mis calificaciones gracias a una mayor disciplina, sino que también construí amistades valiosas y fortalecí mis habilidades sociales, concluyendo esta etapa con una gran madurez académica y un recuerdo entrañable de mi formación.
-            </p>
+        <!-- PORTADA 2 -->
+        <div id="page2" class="page">
+            <h1>Mi Testimonio como Estudiante</h1>
+            <p>Mi paso por la etapa escolar ha sido una experiencia llena de aprendizajes, transformaciones y desafíos personales que moldearon mi carácter. En mis primeros años de educación primaria todo marchaba con relativa tranquilidad y normalidad; sin embargo, con el paso del tiempo tuve que enfrentar un cambio de colegio que al principio me afectó bastante. No me sentía conforme con haber dejado mi entorno anterior y me resultaba difícil adaptarme a ese nuevo ambiente. Además, al tratarse de una institución privada, admito que no demostraba el compromiso necesario ni me esforzaba al máximo en mis deberes académicos, ya que sentía una falta de motivación y asumía falsamente que todo resultaría sencillo con solo asistir. 
+Afortunadamente, mi rumbo cambió de manera significativa cuando ingresé al colegio Don Bosco. En los primeros días experimenté una gran timidez e inseguridad al verme rodeado de personas desconocidas y un ritmo de aprendizaje distinto. No obstante, a medida que transcurrieron las semanas, fui superando paulatinamente el aislamiento, comenzando a participar más e interactuando con fluidez con mis compañeros de aula. Esta progresiva ganancia de confianza impactó de forma sumamente positiva en todos los aspectos de mi vida escolar. No solo logré subir exponencialmente mis calificaciones gracias a una mayor disciplina, sino que también construí amistades valiosas y fortalecí mis habilidades sociales, concluyendo esta etapa con una gran madurez académica y un recuerdo entrañable de mi formación. 
+</p>
+            <button class="btn" onclick="showPage(3)">Ver Mi Propósito a Futuro</button>
+        </div>
 
-            <!-- Galería con las 3 imágenes -->
-            <div class="galeria">
-                <div class="galeria-item">
-                    <img src="foto_plaza.jpg" alt="Paseo por la plaza con compañeros de curso">
-                    <div class="pie-foto">Recuerdos y paseos en la plaza junto a mis compañeros.</div>
-                </div>
-                <div class="galeria-item">
-                    <img src="foto_iglesia.jpg" alt="Actividad escolar en la iglesia con compañeros">
-                    <div class="pie-foto">Participando en actividades institucionales y religiosas.</div>
-                </div>
-                <div class="galeria-item">
-                    <img src="foto_danza.jpg" alt="Presentación de danza folclórica con la Promo 26">
-                    <div class="pie-foto">Presentación de danza folclórica junto a la Promo '26.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 2: MI PROYECTO DE FUTURO -->
-        <section>
-            <h2>2. Mi Proyecto de Futuro</h2>
-            <p>
-                Mirando hacia el futuro, tengo una visión clara y decidida sobre los pasos que debo seguir una vez que concluya de manera definitiva mi etapa en el colegio. Mi objetivo primordial y más cercano es volcar todo mi esfuerzo y dedicación al estudio enfocado para rendir con éxito el examen de admisión en la Universidad Mayor de San Simón, aspirando a ingresar a la carrera de Ingeniería de Sistemas. Soy consciente de que el proceso de selección requiere un alto nivel académico y una preparación rigurosa; por ello, mantengo una actitud perseverante y tengo claro que, si no logro conseguir la vacante en mi primer intento, no me rendiré y continuaré intentándolo con mayor constancia hasta alcanzar el ansiado ingreso.
-            </p>
-            <p>
-                Una vez integrado como estudiante universitario, centraré mis esfuerzos en asimilar cada una de las materias, desarrollando habilidades avanzadas en programación, lógica, análisis de datos y creación de herramientas tecnológicas. Mi meta a mediano plazo es mantener la constancia durante toda la formación universitaria hasta culminar los créditos y graduarme con honores como profesional. De forma paralela al cierre de mis estudios, planeo conversar de manera oportuna con mis tíos y familiares cercanos para coordinar posibles recomendaciones y oportunidades laborales. Esto me facilitará acceder a mi primer empleo en el área tecnológica, permitiéndome ganar experiencia real, autonomía económica y consolidar paso a paso la carrera profesional con la que sueño actualmente.
-            </p>
-        </section>
+        <!-- PORTADA 3 -->
+        <div id="page3" class="page">
+            <h1>Mi Propósito a Futuro</h1>
+            <p>Mirando hacia el futuro, tengo una visión clara y decidida sobre los pasos que debo seguir una vez que concluya de manera definitiva mi etapa en el colegio. Mi objetivo primordial y más cercano es volcar todo mi esfuerzo y dedicación al estudio enfocado para rendir con éxito el examen de admisión en la Universidad Mayor de San Simón, aspirando a ingresar a la carrera de Ingeniería de Sistemas. Soy consciente de que el proceso de selección requiere un alto nivel académico y una preparación rigurosa; por ello, mantengo una actitud perseverante y tengo claro que, si no logro conseguir la vacante en mi primer intento, no me rendiré y continuaré intentándolo con mayor constancia hasta alcanzar el ansiado ingreso. 
+Una vez integrado como estudiante universitario, centraré mis esfuerzos en asimilar cada una de las materias, desarrollando habilidades avanzadas en programación, lógica, análisis de datos y creación de herramientas tecnológicas. Mi meta a mediano plazo es mantener la constancia durante toda la formación universitaria hasta culminar los créditos y graduarme con honores como profesional. De forma paralela al cierre de mis estudios, planeo conversar de manera oportuna con mis tíos y familiares cercanos para coordinar posibles recomendaciones y oportunidades laborales. Esto me facilitará acceder a mi primer empleo en el área tecnológica, permitiéndome ganar experiencia real, autonomía económica y consolidar paso a paso la carrera profesional con la que sueño actualmente. 
+</p>
+            <button class="btn" onclick="showPage(1)">Volver al Inicio</button>
+        </div>
     </div>
 
+    <script>
+        const backgrounds = {
+            1: '1.jpg', // Ruta de la imagen para la Portada 1
+            2: '2.jpg', // Ruta de la imagen para el Testimonio
+            3: '3.jpg'  // Ruta de la imagen para el Propósito
+        };
+
+        function showPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page' + pageNumber).classList.add('active');
+            document.getElementById('bg-container').style.backgroundImage = `url('${backgrounds[pageNumber]}')`;
+        }
+    </script>
 </body>
 </html>
