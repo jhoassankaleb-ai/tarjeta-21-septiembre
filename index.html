@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Virtual - 21 de Septiembre</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 { color: #2e7d32; margin-bottom: 15px; font-size: 1.8rem; }
+        p { color: #333; line-height: 1.6; margin-bottom: 28px; text-align: justify; }
+        .btn {
+            background: #1b365d; color: white; border: none;
+            padding: 12px 24px; border-radius: 25px; font-size: 1rem;
+            cursor: pointer; transition: 0.3s;
+        }
+        .btn:hover { background: #2e7d32; transform: scale(1.05); }
+        .page { display: none; }
+        .page.active { display: block; }
+    </style>
+</head>
+<body id="bg-container" style="background-image: url('https://picsum.photos/id/1060/1200/800');">
+
+    <div class="card">
+        <!-- PORTADA 1 -->
+        <div id="page1" class="page active">
+            <h1>¡Feliz 21 de Septiembre! 🌸</h1>
+            <p style="text-align: center;">Día del Estudiante y de la Primavera. ¡Celebramos el esfuerzo, el entusiasmo y el futuro de nuestra juventud!</p>
+            <button class="btn" onclick="showPage(2)">Ver Mi Testimonio</button>
+        </div>
+
+        <!-- PORTADA 2 -->
+        <div id="page2" class="page">
+            <h1>Mi Testimonio como Estudiante</h1>
+            <p>[Escribe o pega aquí tus 250 palabras de testimonio redactadas en tu cuaderno...]</p>
+            <button class="btn" onclick="showPage(3)">Ver Mi Propósito a Futuro</button>
+        </div>
+
+        <!-- PORTADA 3 -->
+        <div id="page3" class="page">
+            <h1>Mi Propósito a Futuro</h1>
+            <p>[Escribe o pega aquí tus 250 palabras sobre tus proyectos y sueños a futuro...]</p>
+            <button class="btn" onclick="showPage(1)">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script>
+        const backgrounds = {
+            1: "https://picsum.photos/id/1060/1200/800", // Imagen Portada 1
+            2: "https://picsum.photos/id/1015/1200/800", // Imagen Fondo Testimonio
+            3: "https://picsum.photos/id/1002/1200/800"  // Imagen Fondo Propósito
+        };
+
+        function showPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page' + pageNumber).classList.add('active');
+            document.getElementById('bg-container').style.backgroundImage = `url('${backgrounds[pageNumber]}')`;
+        }
+    </script>
+</body>
+</html>
